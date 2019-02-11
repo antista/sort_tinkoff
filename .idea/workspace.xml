@@ -77,9 +77,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="949" />
-    <option name="width" value="980" />
-    <option name="height" value="1091" />
+    <option name="x" value="948" />
+    <option name="width" value="981" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -133,12 +133,12 @@
       <workItem from="1549548686519" duration="25880000" />
       <workItem from="1549650755521" duration="882000" />
       <workItem from="1549786875463" duration="1270000" />
-      <workItem from="1549857614033" duration="7164000" />
+      <workItem from="1549857614033" duration="7813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35196000" />
+    <option name="totallyTimeSpent" value="35845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="633" y="0" width="653" height="727" extended-state="0" />

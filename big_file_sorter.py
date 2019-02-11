@@ -80,12 +80,7 @@ class Big_File_Sorter():
                 current_string = current_string.replace('\n', '')
                 strings.append((current_string, i))
             except:
-
-                # if current_string == "":
                 strings.append((None, i))
-            # else:
-            #     current_string = current_string.replace('\n', '')
-            #     strings.append((current_string, i))
         self.already_merged += count
         first_string = True
         while len(strings) > 0:
@@ -105,9 +100,6 @@ class Big_File_Sorter():
                 strings[id_smaller_string] = (next_string, id_smaller_string)
             except:
                 strings[id_smaller_string] = (None, id_smaller_string)
-
-        # for file in files:
-        #     file.close()
 
         self.result_file = result_file.name
         result_file.close()
