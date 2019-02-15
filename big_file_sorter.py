@@ -1,5 +1,4 @@
 import os
-import random
 import sys
 import tempfile
 import config
@@ -16,7 +15,7 @@ class Big_File_Sorter():
         self.already_merged = 0
 
     def sort(self):
-        if len(self.filenames) != 0:
+        if self.filenames:
             self.process_files()
         elif not sys.stdin.isatty():
             self.process_data(sys.stdin)
@@ -55,7 +54,8 @@ class Big_File_Sorter():
 
     def sort_text(self, text):
         tmp_text = text.split('\n')
-        return '\n'.join(quicksort(tmp_text))
+        tmp_text.sort()
+        return '\n'.join(tmp_text)
 
     def merge_tmp_files(self):
         if len(self.tmp_file_names) == 1:
@@ -110,9 +110,10 @@ class Big_File_Sorter():
             if string[0] is None:
                 continue
             tmp_arr.append([string[0], string[1]])
-        if len(tmp_arr) == 0:
+        if not tmp_arr:
             return 'END'
-        return int(quicksort(tmp_arr)[0][1])
+        tmp_arr.sort()
+        return int(tmp_arr[0][1])
 
     def delete_tmp_dir(self):
         self.make_result_file()
@@ -138,12 +139,3 @@ class Big_File_Sorter():
                 print(line.replace('\n', ''))
         os.remove(self.result_file)
 
-
-def quicksort(data):
-    if len(data) <= 1:
-        return data
-    q = random.choice(data)
-    l_nums = [n for n in data if n < q]
-    e_nums = [q] * data.count(q)
-    b_nums = [n for n in data if n > q]
-    return quicksort(l_nums) + e_nums + quicksort(b_nums)

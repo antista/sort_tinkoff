@@ -30,9 +30,9 @@ def get_args():
 
 def sort():
     filenames = get_args().filenames
-    if len(filenames) != 0 and not is_big_data(filenames):
+    if filenames and not is_big_data(filenames):
         lines = read_files(filenames)
-        lines = big_file_sorter.quicksort(lines)
+        lines.sort()
         for line in lines:
             print(line)
 
